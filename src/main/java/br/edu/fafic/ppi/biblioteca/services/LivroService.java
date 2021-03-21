@@ -5,6 +5,9 @@ import br.edu.fafic.ppi.biblioteca.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.UUID;
+
 @Service
 public class LivroService {
 
@@ -22,4 +25,16 @@ public class LivroService {
     public Livro getByIsbn(String isbn){
         return  livroRepository.findLivroByIsbn(isbn);
     }
+
+    public List<Livro> getAll(){
+        return  livroRepository.findAll();
+    }
+
+    public void deleteLivro(UUID uuid){
+        Livro livro = livroRepository.getOne(uuid);
+        livroRepository.delete(livro);
+    }
+
+
+
 }

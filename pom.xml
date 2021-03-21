@@ -8,13 +8,13 @@
         <version>2.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>br.edu.fafic.ppi</groupId>
-    <artifactId>biblioteca</artifactId>
-    <version>1.0</version>
-    <name>biblioteca</name>
-    <description>Projeto da disciplina de PPI</description>
+    <groupId>br.com.fafic.ppi</groupId>
+    <artifactId>clinica_backand</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>clinica_backand</name>
+    <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -36,18 +36,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+
+        </dependency>
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>2.3.9</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>
