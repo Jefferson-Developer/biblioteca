@@ -11,6 +11,8 @@ import javax.persistence.Embeddable;
 @ToString
 @Embeddable
 public class CursoProfessor {
+
     String nome;
     String area;
+
 }

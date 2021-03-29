@@ -1,6 +1,5 @@
 package br.edu.fafic.ppi.biblioteca.domain;
 
-
 import lombok.*;
 
 import javax.persistence.Embeddable;
@@ -12,6 +11,8 @@ import javax.persistence.Embeddable;
 @ToString
 @Embeddable
 public class Contato {
+
     private String email;
     private String telefone;
+
 }

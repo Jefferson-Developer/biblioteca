@@ -1,6 +1,5 @@
 package br.edu.fafic.ppi.biblioteca.domain;
 
-
 import br.edu.fafic.ppi.biblioteca.enums.Genero;
 import lombok.*;
 
@@ -16,9 +15,8 @@ import java.util.UUID;
 @Builder
 @ToString
 @EqualsAndHashCode
-@Inheritance(strategy =  InheritanceType.JOINED)
-public class Pessoa implements Serializable
-{
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,11 +34,12 @@ public class Pessoa implements Serializable
     private String matricula;
 
     @Embedded
-    private  Endereco endereco;
+    private Endereco endereco;
 
     @Embedded
     private Contato contato;
 
-
+    @Embedded
+    private Login login;
 
 }

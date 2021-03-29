@@ -15,6 +15,4 @@ public class CursoAluno {
     private String nomeCurso;
     private int periodo;
 
-
-
 }

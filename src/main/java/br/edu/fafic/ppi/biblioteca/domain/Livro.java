@@ -30,7 +30,9 @@ public class Livro implements Serializable {
     @Column(unique = true)
     private String isbn;
 
-    public static Livro create(LivroDTO livroDTO){
-        return new ModelMapper().map(livroDTO, Livro.class);
+    public static Livro create(LivroDTO livroDTO) {
+        return new ModelMapper().map(
+                livroDTO, Livro.class
+        );
     }
 }
