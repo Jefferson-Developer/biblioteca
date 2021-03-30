@@ -30,7 +30,7 @@ public class Usuario implements Serializable {
     @Enumerated(EnumType.ORDINAL)
     private Genero genero;
 
-    @Column(unique = true)
+    @Column(unique = true, insertable = false, updatable = false)
     private String matricula;
 
     @Embedded
