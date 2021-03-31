@@ -3,6 +3,7 @@ package br.edu.fafic.ppi.biblioteca.domain;
 import lombok.*;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,7 +11,7 @@ import javax.persistence.Embeddable;
 @Builder
 @ToString
 @Embeddable
-public class CursoAluno {
+public class CursoAluno implements Serializable {
 
     private String nomeCurso;
     private int periodo;

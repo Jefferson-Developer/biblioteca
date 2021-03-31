@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 @Entity
 @DiscriminatorValue(value = "P")
@@ -14,7 +15,7 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 
 @Data
-public class Professor extends Usuario {
+public class Professor extends Usuario implements Serializable {
 
     @Embedded
     CursoProfessor cursoProfessor;
