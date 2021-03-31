@@ -1,34 +1,32 @@
 package br.edu.fafic.ppi.biblioteca.domain;
 
+import br.edu.fafic.ppi.biblioteca.dto.LivroDTO;
+import br.edu.fafic.ppi.biblioteca.enums.Area;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-@AllArgsConstructor
+@Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Builder
+@EqualsAndHashCode
 @ToString
-@Embeddable
-public class Biblioteca implements Serializable {
-
-    private String nome;
-    private String nomeInstituicao;
+public class Emprestimo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Bibliotecario bibliotecario;
+    private Usuario usuario;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Livro> acervoLivros;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Usuario> usuarios;
+    private List<Livro> livrosLocados;
 
 }
