@@ -11,5 +11,9 @@ public interface LivroRepository extends JpaRepository<Livro, UUID> {
 
     public Livro findLivroByIsbn(String isbn);
 
+    public Livro findLivroByArea(String area);
+
+    public Livro findLivroByNome(String nome);
+
 
 }

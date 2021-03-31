@@ -24,10 +24,20 @@ public class LivroResource {
                 .body(livroService.saveLivro(Livro.create(livroDTO)));
     }
 
-    @GetMapping("/get/{isbn}")
+    @GetMapping("/getByIsbn/{isbn}")
     public ResponseEntity getLivroByIsbn(@PathVariable("isbn") String isbn){
         return ResponseEntity.ok().body(livroService.getByIsbn(isbn));
     }
+
+    @GetMapping("/getByArea/{area}")
+    public  ResponseEntity getLivroByArea(@PathVariable("area")String area){
+        return ResponseEntity.ok().body(livroService.LivroGetByArea(area));
+    }
+    @GetMapping("/getByNome/{nome}")
+    public  ResponseEntity getLivroByNome(@PathVariable("nome")String nome){
+        return ResponseEntity.ok().body(livroService.getByNome(nome));
+    }
+
     @GetMapping("/all")
     public ResponseEntity getAllLivros(){
         return ResponseEntity.ok().body(livroService.getAll());

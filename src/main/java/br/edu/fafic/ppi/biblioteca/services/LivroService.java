@@ -26,6 +26,10 @@ public class LivroService {
         return  livroRepository.findLivroByIsbn(isbn);
     }
 
+    public Livro getByNome(String nome){
+        return  livroRepository.findLivroByNome(nome);
+    }
+
     public List<Livro> getAll(){
         return  livroRepository.findAll();
     }
@@ -33,6 +37,10 @@ public class LivroService {
     public void deleteLivro(UUID uuid){
         Livro livro = livroRepository.getOne(uuid);
         livroRepository.delete(livro);
+    }
+
+    public Livro LivroGetByArea(String area){
+        return  livroRepository.findLivroByArea(area);
     }
 
 
