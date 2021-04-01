@@ -1,14 +1,10 @@
 package br.edu.fafic.ppi.biblioteca.domain;
 
-import br.edu.fafic.ppi.biblioteca.dto.LivroDTO;
-import br.edu.fafic.ppi.biblioteca.enums.Area;
 import lombok.*;
-import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -30,5 +26,7 @@ public class Devolucao implements Serializable {
     private Calendar dataDevolucao;
 
     private Double multa;
+
+    private Boolean devolvido;
 
 }
