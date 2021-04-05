@@ -5,6 +5,8 @@ import br.edu.fafic.ppi.biblioteca.repository.EmprestimoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class EmprestimoService {
 
@@ -17,6 +19,10 @@ public class EmprestimoService {
 
     public Emprestimo save(Emprestimo emprestimo){
         return emprestimoRepository.save(emprestimo);
+    }
+
+    public Emprestimo getEmprestimoByUuid(UUID uuid){
+        return emprestimoRepository.findEmprestimoByUuid(uuid);
     }
 
 
