@@ -18,8 +18,11 @@ public class DevolucaoResource {
         return ResponseEntity.ok().body(devolucaoService.save(devolucao));
     }
 
-    @PatchMapping
-    public ResponseEntity patch(@RequestBody String emprestimoUuid, @RequestBody Boolean devolvido){
+    @PatchMapping("/atualizar/{emprestimoUuid}&{devolvido}")
+    public ResponseEntity patch(
+            @PathVariable("emprestimoUuid") String emprestimoUuid,
+            @PathVariable("devolvido") Boolean devolvido
+    ){
         return ResponseEntity.ok().body(devolucaoService.patch(emprestimoUuid, devolvido));
     }
 

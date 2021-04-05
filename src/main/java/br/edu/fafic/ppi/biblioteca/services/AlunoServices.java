@@ -1,7 +1,6 @@
 package br.edu.fafic.ppi.biblioteca.services;
 
 import br.edu.fafic.ppi.biblioteca.domain.Aluno;
-import br.edu.fafic.ppi.biblioteca.domain.Livro;
 import br.edu.fafic.ppi.biblioteca.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
