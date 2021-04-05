@@ -19,10 +19,5 @@ public class DevolucaoService {
         return devolucaoRepository.save(devolucao);
     }
 
-    public Devolucao patch(String emprestimoUuid, Boolean devolvido){
-        return devolucaoRepository.deleteDevolucaoByEmprestimo_Uuid(emprestimoUuid, devolvido);
-    }
-
-
 
 }

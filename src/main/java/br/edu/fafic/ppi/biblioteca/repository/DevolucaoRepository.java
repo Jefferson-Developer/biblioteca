@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public interface DevolucaoRepository extends JpaRepository<Devolucao, UUID> {
 
-    public Devolucao deleteDevolucaoByEmprestimo_Uuid(String uuid, Boolean devolvido);
+
 
 }

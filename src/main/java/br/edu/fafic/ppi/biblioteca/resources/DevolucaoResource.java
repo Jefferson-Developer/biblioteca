@@ -1,6 +1,7 @@
 package br.edu.fafic.ppi.biblioteca.resources;
 
 import br.edu.fafic.ppi.biblioteca.domain.Devolucao;
+import br.edu.fafic.ppi.biblioteca.domain.Emprestimo;
 import br.edu.fafic.ppi.biblioteca.services.DevolucaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +19,16 @@ public class DevolucaoResource {
         return ResponseEntity.ok().body(devolucaoService.save(devolucao));
     }
 
-    @PatchMapping("/atualizar/{emprestimoUuid}&{devolvido}")
+    @PatchMapping("/atualizar/{emprestimoUuid}/{devolvido}")
     public ResponseEntity patch(
             @PathVariable("emprestimoUuid") String emprestimoUuid,
             @PathVariable("devolvido") Boolean devolvido
     ){
-        return ResponseEntity.ok().body(devolucaoService.patch(emprestimoUuid, devolvido));
+
+
+        Devolucao devolucao = new Devolucao();
+        return ResponseEntity.ok().body(devolucaoService.save(devolucao));
+
     }
 
 }
