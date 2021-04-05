@@ -15,6 +15,10 @@ public class EmprestimoService {
         this.emprestimoRepository = emprestimoRepository;
     }
 
+    public Emprestimo save(Emprestimo emprestimo){
+        return emprestimoRepository.save(emprestimo);
+    }
+
 
 
 }

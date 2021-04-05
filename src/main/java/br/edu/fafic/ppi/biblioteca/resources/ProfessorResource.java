@@ -1,7 +1,5 @@
 package br.edu.fafic.ppi.biblioteca.resources;
 
-import br.edu.fafic.ppi.biblioteca.domain.Aluno;
-import br.edu.fafic.ppi.biblioteca.services.AlunoServices;
 import br.edu.fafic.ppi.biblioteca.services.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -17,8 +17,9 @@ public class ProfessorService {
     public ProfessorService(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
     }
-    public Professor save(Professor aluno){
-        return  professorRepository.save(aluno);
+
+    public Professor save(Professor professor){
+        return  professorRepository.save(professor);
     }
 
     public Professor getProfessorByMatricula(String matricula){
