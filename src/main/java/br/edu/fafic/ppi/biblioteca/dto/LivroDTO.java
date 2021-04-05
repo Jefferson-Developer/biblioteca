@@ -3,8 +3,6 @@ package br.edu.fafic.ppi.biblioteca.dto;
 import br.edu.fafic.ppi.biblioteca.enums.Area;
 import lombok.*;
 
-import java.io.Serializable;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

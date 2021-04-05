@@ -1,17 +1,12 @@
 package br.edu.fafic.ppi.biblioteca.resources;
-import br.edu.fafic.ppi.biblioteca.domain.Livro;
-import br.edu.fafic.ppi.biblioteca.dto.LivroDTO;
 import br.edu.fafic.ppi.biblioteca.services.BibliotecarioService;
-import br.edu.fafic.ppi.biblioteca.services.LivroService;
 import br.edu.fafic.ppi.biblioteca.services.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import br.edu.fafic.ppi.biblioteca.domain.Bibliotecario;
-import br.edu.fafic.ppi.biblioteca.dto.bibliotecarioDTO;
+import br.edu.fafic.ppi.biblioteca.dto.BibliotecarioDTO;
 import br.edu.fafic.ppi.biblioteca.services.AlunoServices;
-import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/bibliotecaria")
@@ -27,7 +22,7 @@ public class BibliotecariaResource {
     private ProfessorService professorService;
 
     @PostMapping
-    public  ResponseEntity save(@RequestBody bibliotecarioDTO bibliotecarioDTO){
+    public  ResponseEntity save(@RequestBody BibliotecarioDTO bibliotecarioDTO){
         return  ResponseEntity.ok().body(bibliotecarioService
                 .saveBibliotecaria(Bibliotecario.create(bibliotecarioDTO)));
     }

@@ -1,6 +1,6 @@
 package br.edu.fafic.ppi.biblioteca.dto;
 
-import br.edu.fafic.ppi.biblioteca.domain.*;
+import br.edu.fafic.ppi.biblioteca.domain.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,11 +10,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class AlunoDTO {
+public class BibliotecarioDTO {
 
     private Usuario usuario;
-
-    private CursoAluno cursoAluno;
 
 
 }

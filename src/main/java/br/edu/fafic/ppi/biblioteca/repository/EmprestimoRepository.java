@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public interface EmprestimoRepository extends JpaRepository<Emprestimo, UUID> {
 
-
+    public Emprestimo findEmprestimoByUsuario(String login);
 
 }

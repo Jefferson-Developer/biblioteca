@@ -1,7 +1,6 @@
 package br.edu.fafic.ppi.biblioteca.domain;
 
 import br.edu.fafic.ppi.biblioteca.dto.AlunoDTO;
-import br.edu.fafic.ppi.biblioteca.dto.bibliotecarioDTO;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 
