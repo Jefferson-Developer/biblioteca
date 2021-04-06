@@ -6,10 +6,7 @@ import br.edu.fafic.ppi.biblioteca.dto.AlunoDTO;
 import br.edu.fafic.ppi.biblioteca.services.AlunoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.Entity;
 
@@ -23,5 +20,10 @@ public class AlunoResource {
     @PostMapping
     public ResponseEntity save(@RequestBody Aluno aluno){
         return ResponseEntity.ok().body(alunoService.save(aluno));
+    }
+
+    @DeleteMapping
+    public ResponseEntity delete(@RequestBody String matricula){
+        return ResponseEntity.ok().body(alunoService.deleteAlunoByMatricula(matricula));
     }
 }

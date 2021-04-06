@@ -10,4 +10,6 @@ public interface DevolucaoRepository extends JpaRepository<Devolucao, UUID> {
 
     public Devolucao getDevolucaoByEmprestimo(Emprestimo emprestimo);
 
+    public Devolucao getDevolucaoByEmprestimo_Usuario_Matricula(String matricula);
+
 }

@@ -3,10 +3,7 @@ package br.edu.fafic.ppi.biblioteca.resources;
 import br.edu.fafic.ppi.biblioteca.services.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import br.edu.fafic.ppi.biblioteca.domain.Professor;
 
 @RestController
@@ -19,6 +16,11 @@ public class ProfessorResource {
     @PostMapping
     public ResponseEntity save(@RequestBody Professor professor){
         return ResponseEntity.ok().body(professorService.save(professor));
+    }
+
+    @DeleteMapping
+    public ResponseEntity delete(@RequestBody String matricula){
+        return ResponseEntity.ok().body(professorService.deleteProfessorByMatricula(matricula));
     }
 
 }

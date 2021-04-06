@@ -24,7 +24,19 @@ public class DevolucaoResource {
         return ResponseEntity.ok().body(devolucaoService.save(devolucao));
     }
 
-    @PatchMapping("/atualizar/{emprestimoUuid}/{devolvido}")
+    @GetMapping("/devolucoes/{matricula}")
+    public ResponseEntity getDevolucoesByMatricula(@PathVariable("matricula") String matricula){
+        return ResponseEntity.ok().body(this.devolucaoService.getByMatricula(matricula));
+    }
+
+    @GetMapping("/devolucoes_atrasadas/{matricula}")
+    public ResponseEntity getDevolucoesAtrasadasByMatricula(@PathVariable("matricula") String matricula){
+        return ResponseEntity.ok().body(
+                this.devolucaoService.getAtrasadoByMatricula(matricula)
+        );
+    }
+
+    @PatchMapping("/atualizar/?emprestimoId={emprestimoUuid}&devolvido={devolvido}")
     public ResponseEntity patch(
             @PathVariable("emprestimoUuid") UUID emprestimoUuid,
             @PathVariable("devolvido") Boolean devolvido

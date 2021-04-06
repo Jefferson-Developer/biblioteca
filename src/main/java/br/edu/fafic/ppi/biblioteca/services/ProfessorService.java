@@ -8,6 +8,8 @@ import br.edu.fafic.ppi.biblioteca.domain.Professor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class ProfessorService {
 
@@ -25,7 +27,19 @@ public class ProfessorService {
     public Professor getProfessorByMatricula(String matricula){
         return  professorRepository.findProfessorByMatricula(matricula);
     }
+
     public Professor getProfessorByNome(String nome){
         return  professorRepository.findProfessorByNome(nome);
+    }
+
+    public boolean deleteProfessorByMatricula(String matricula){
+        try {
+            Professor professor = getProfessorByMatricula(matricula);
+            professorRepository.delete(professor);
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+
     }
 }

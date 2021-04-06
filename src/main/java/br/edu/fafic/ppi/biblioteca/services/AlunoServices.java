@@ -1,6 +1,7 @@
 package br.edu.fafic.ppi.biblioteca.services;
 
 import br.edu.fafic.ppi.biblioteca.domain.Aluno;
+import br.edu.fafic.ppi.biblioteca.domain.Professor;
 import br.edu.fafic.ppi.biblioteca.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,16 @@ public class AlunoServices {
     }
     public Aluno getAlunoByNome(String nome){
         return  alunoRepository.findAlunoByNome(nome);
+    }
+
+    public boolean deleteAlunoByMatricula(String matricula){
+        try {
+            Aluno aluno = getAlunoByMatricula(matricula);
+            alunoRepository.delete(aluno);
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+
     }
 }

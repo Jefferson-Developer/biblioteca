@@ -25,6 +25,7 @@ public class EmprestimoService {
         return emprestimoRepository.findEmprestimoByUuid(uuid);
     }
 
-
-
+    public Object getEmprestimoByMatricula(String matricula) {
+        return emprestimoRepository.findEmprestimoByMatricula(matricula);
+    }
 }
